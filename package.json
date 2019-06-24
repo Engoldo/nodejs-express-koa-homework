@@ -39,7 +39,18 @@
     "vinyl-source-stream": "^2.0.0"
   },
   "dependencies": {
+    "connect-flash": "^0.1.1",
     "jquery": "^3.3.1",
+    "koa": "^2.7.0",
+    "koa-better-flash": "0.0.3",
+    "koa-body": "^4.1.0",
+    "koa-generic-session": "^2.0.1",
+    "koa-pug": "^3.0.0-2",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "lowdb": "^1.0.0",
+    "nodemailer": "^6.2.1",
+    "nodemon": "^1.19.1",
     "normalize.css": "^7.0.0"
   }
 }
