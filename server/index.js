@@ -7,7 +7,7 @@ const Pug = require("koa-pug");
 const session = require("koa-generic-session");
 const flash = require("koa-better-flash");
 const router = require("./routes");
-const storage = require("./model/storage");
+const storage = require("./models/storage");
 const PORT = 8080;
 
 const app = new Koa();
