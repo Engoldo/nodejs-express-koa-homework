@@ -5,6 +5,7 @@ const session = require("express-session");
 const fs = require("fs");
 const flash = require("connect-flash");
 const storage = require("./models/storage");
+const { error, errorHandler } = require("./middlewares")
 const PORT = 8080;
 
 storage.init();
@@ -37,17 +38,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use("/", require("./routes"));
 
-app.use((req, res, next) => {
-  let err = new Error("not found");
-  err.status = "404";
-  next(err);
-});
-
-// error handler
-app.use((err, req, res, next) => {
-  res.status(err.status || 500);
-  res.render("error", { error: err });
-});
+app.use(error);
+app.use(errorHandler);
 
 app.listen(PORT, () => {
   console.log(`Listen port ${PORT}`);

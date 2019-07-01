@@ -3,14 +3,7 @@ const router = express.Router();
 const mainController = require("./controllers/main");
 const loginController = require("./controllers/login");
 const adminController = require("./controllers/admin");
-
-const isAdmin = (req, res, next) => {
-  if (req.session.isAdmin) {
-    return next();
-  }
-
-  res.redirect("/login");
-};
+const isAdmin = require("./libs/admin-checker");
 
 router.get("/", mainController.get);
 router.post("/", mainController.post);
